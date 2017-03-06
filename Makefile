@@ -7,24 +7,24 @@ CFLAGS= -O0 -g $(INCLUDE_DIRS) $(CDEFS)
 LIBS=
 
 HFILES= 
-CFILES= brighten.c
+CFILES= img_proc.c
 
 SRCS= ${HFILES} ${CFILES}
 COBJS= ${CILES:.c=.o}
 
-all:	brighten brightc.asm
+all:	img_proc img_proc.asm
 
 clean:
 	-rm -f *.o *.d brighter.ppm brightc.asm
-	-rm -f brighten
+	-rm -f img_proc
 
 distclean:
 	-rm -f *.o *.d
 
-brighten: brighten.o
+img_proc: img_proc.o
 	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ $@.o $(LIBS)
 
-brightc.asm: brightc.c
+brightc.asm: img_proc.c
 	$(CC) -O0 -S $< -o $@
 
 depend:
