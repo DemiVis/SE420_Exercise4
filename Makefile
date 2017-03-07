@@ -1,33 +1,25 @@
-INCLUDE_DIRS = 
-LIB_DIRS = 
-CC=gcc
+CXX=g++
+PRODUCT= test_benchmarks
 
-CDEFS=
-CFLAGS= -O0 -g $(INCLUDE_DIRS) $(CDEFS)
-LIBS=
+all: options.o bright invert sharpen
+	
+options.o:
+	g++ -c -lpthread options.cpp ppm.cpp -I./
 
-HFILES= 
-CFILES= img_proc.c
+bright: bright.o
+	g++ $@.c -o $@ options.o ppm.o
+	
+invert: invert.o
+	g++ $@.c -o $@ options.o ppm.o
+	
+sharpen: sharpen.o
+	g++ $@.c sharpen.c -o $@ options.o ppm.o
+	
+sobel: sobel.o
+	g++ $@.c -o $@ options.o ppm.o
 
-SRCS= ${HFILES} ${CFILES}
-COBJS= ${CILES:.c=.o}
-
-all:	img_proc img_proc.asm
-
+%.o: %.c
+	${CXX} -c $< -o $@
+	
 clean:
-	-rm -f *.o *.d brighter.ppm brightc.asm
-	-rm -f img_proc
-
-distclean:
-	-rm -f *.o *.d
-
-img_proc: img_proc.o
-	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ $@.o $(LIBS)
-
-brightc.asm: img_proc.c
-	$(CC) -O0 -S $< -o $@
-
-depend:
-
-.c.o:
-	$(CC) $(CFLAGS) -c $<
+	rm -f *.o *~ *.ppm
