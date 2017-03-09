@@ -1,8 +1,9 @@
 *.o
 bright
+invert
 CreateTruth/create_truth.asv
 CreateTruth/HoughOut.*
 CreateTruth/SobelOut.*
 CreateTruth/RhoThetaOut.*
-CreateTruth/PyrupOut.ppm
-CreateTruth/PyrdwnOut.ppm
+CreateTruth/PyrupOut.*
+CreateTruth/PyrdwnOut.*
