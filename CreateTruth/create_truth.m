@@ -11,15 +11,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Input Parameters
-inputImgFilename = 'saturn_medium.jpg'
+inputImgFilename = 'saturn_medium.jpg';
 
 % Sobel
-useAutoThreshold = true;
+useAutoThresholdSobel = true;
 sobelThreshold = 0.001; 
 
 %Hough
-houghThreshold = ceil(0.3*max(H(:)));
+useAutoThresholdHough = true;
+houghThreshold = 50;
 houghNumLines = 5;
+
 
 %% Setup for Image transformations
 close all
@@ -33,7 +35,7 @@ titleStr = sprintf('Input Image. %dx%d', width, height);
 title(titleStr);
 
 %% Sobel
-if useAutoThreshold
+if useAutoThresholdSobel
     [sobelImg, thresh] = edge(grayImg, 'sobel');
 else
     [sobelImg, thresh] = edge(grayImg, 'sobel', sobelThreshold);
@@ -43,18 +45,24 @@ figure
 imshow(sobelImg);
 titleStr = sprintf('Sobel Transformed Image, Thresh:%1.3f', thresh);
 title(titleStr);
+imwrite(sobelImg, 'SobelOut.ppm', 'ppm');
 
 %% Hough
 [rhoThetaImg,theta,rho] = hough(sobelImg);
-peaks = houghpeaks(rhoThetaImg, houghNumLines, 'threshold',houghThreshold);
+if useAutoThresholdHough
+    peaks = houghpeaks(rhoThetaImg, houghNumLines);
+else
+    peaks = houghpeaks(rhoThetaImg, houghNumLines, 'threshold',houghThreshold);
+end
 lines = houghlines(sobelImg, theta, rho, peaks, 'FillGap',5,'MinLength',7);
 
 figure
-subplot(1,2,1)
 imshow(imadjust(mat2gray(rhoThetaImg)),[],'XData',theta,'YData',rho);
-titleStr = sprintf('Hough Lines Rho Theta', thresh);
+titleStr = sprintf('Hough Lines Rho Theta');
 title(titleStr);
-subplot(1,2,2)
+imwrite(imadjust(mat2gray(rhoThetaImg)), 'RhoThetaOut.ppm', 'ppm');
+
+figure
 imshow(colorImg)
 title('Hough Lines on Image')
 hold on
@@ -62,5 +70,6 @@ for k = 1:length(lines)
    xy = [lines(k).point1; lines(k).point2];
    plot(xy(:,1),xy(:,2),'LineWidth',2,'Color','red');
 end
+imwrite(sobelImg, 'HoughOut.ppm', 'ppm');
 
 %% Pyramidal Up

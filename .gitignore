@@ -1,2 +1,6 @@
 *.o
 bright
+CreateTruth/create_truth.asv
+CreateTruth/HoughOut.ppm
+CreateTruth/SobelOut.ppm
+CreateTruth/RhoThetaOut.ppm
