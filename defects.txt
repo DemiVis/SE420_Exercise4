@@ -1,0 +1,8 @@
+./sharper doesn't actually work
+
+fails with larger than MAX_IMG_SZ images, but doesn't say why or have check to avoid
+
+    doesn't fail with sharpen for some reason, seg faults with others
+
+
+Segmentation fault with images as large as 1920x1080x3, even with adequate memory allocation. Required reduction in MAX_IMG_SZ
