@@ -5,6 +5,8 @@
 
 #include "ppm.h"
 
+#define MAX_IMG_SZ          (1280*720*3)
+
 #define PIXIDX ((i* (*col) * (*chan))+(j* (*chan))+k)
 #define SAT (255)
 
@@ -26,12 +28,12 @@ void brighten(unsigned char *img, unsigned char *newimg, unsigned * row, unsigne
 int main(int argc, char *argv[])
 {
   char header[512];
-  unsigned char img[640*480*3], brightimg[640*480*3];
+  unsigned char img[MAX_IMG_SZ], brightimg[MAX_IMG_SZ];
   int bufflen, hdrlen; 
   unsigned row=0, col=0, chan=0, pix; int i, j, k;
   double alpha=1.25;  unsigned char beta=25;
 
-  if(argc < 2)
+  if(argc != 2)
   {
       printf("Use: brighten inputfile\n");
       exit(-1);

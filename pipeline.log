@@ -1,0 +1,77 @@
+Use: invert inputfile
+Reading PPM
+PPM read
+Writing PPM
+wrote 0 bytes, header=0x7ffd7b4dd8a0, towrite=0
+wrote 38 bytes, header=0x7ffd7b4dd8c6, towrite=-38
+wrote 0 bytes, buffer=0x7ffd7b780aa0, towrite=0
+wrote 756900 bytes, buffer=0x7ffd7b839744, towrite=-756900
+PPM written
+Reading PPM
+PPM read
+Begin Inversion... done.
+Writing PPM
+wrote 0 bytes, header=0x7fffd2ff68f0, towrite=0
+wrote 38 bytes, header=0x7fffd2ff6916, towrite=-38
+wrote 0 bytes, buffer=0x7fffd3299af0, towrite=0
+wrote 756900 bytes, buffer=0x7fffd3352794, towrite=-756900
+PPM written
+Reading PPM
+PPM read
+Writing PPM
+wrote 0 bytes, header=0x7ffd8eead480, towrite=0
+wrote 38 bytes, header=0x7ffd8eead4a6, towrite=-38
+wrote 0 bytes, buffer=0x7ffd8f150680, towrite=0
+wrote 756900 bytes, buffer=0x7ffd8f209324, towrite=-756900
+PPM written
+Reading PPM
+PPM read
+Begin Inversion... done.
+Writing PPM
+wrote 0 bytes, header=0x7ffea89a95e0, towrite=0
+wrote 38 bytes, header=0x7ffea89a9606, towrite=-38
+wrote 0 bytes, buffer=0x7ffea8c4c7e0, towrite=0
+wrote 756900 bytes, buffer=0x7ffea8d05484, towrite=-756900
+PPM written
+Reading PPM
+PPM read
+Writing PPM
+wrote 0 bytes, header=0x7ffcd63711f0, towrite=0
+wrote 38 bytes, header=0x7ffcd6371216, towrite=-38
+wrote 0 bytes, buffer=0x7ffcd66143f0, towrite=0
+wrote 756900 bytes, buffer=0x7ffcd66cd094, towrite=-756900
+PPM written
+Reading PPM
+PPM read
+Begin Inversion... done.
+Writing PPM
+wrote 0 bytes, header=0x7fff19d80ab0, towrite=0
+wrote 39 bytes, header=0x7fff19d80ad7, towrite=-39
+wrote 0 bytes, buffer=0x7fff1a023cb0, towrite=0
+wrote 2764800 bytes, buffer=0x7fff1a2c6cb0, towrite=-2764800
+PPM written
+Reading PPM
+PPM read
+Writing PPM
+wrote 0 bytes, header=0x7ffcf2f493e0, towrite=0
+wrote 39 bytes, header=0x7ffcf2f49407, towrite=-39
+wrote 0 bytes, buffer=0x7ffcf31ec5e0, towrite=0
+wrote 2764800 bytes, buffer=0x7ffcf348f5e0, towrite=-2764800
+PPM written
+Reading PPM
+PPM read
+Begin Inversion... done.
+Writing PPM
+wrote 0 bytes, header=0x7ffe01652e70, towrite=0
+wrote 39 bytes, header=0x7ffe01652e97, towrite=-39
+wrote 0 bytes, buffer=0x7ffe018f6070, towrite=0
+wrote 1861650 bytes, buffer=0x7ffe01abc882, towrite=-1861650
+PPM written
+Reading PPM
+PPM read
+Writing PPM
+wrote 0 bytes, header=0x7ffe12069370, towrite=0
+wrote 39 bytes, header=0x7ffe12069397, towrite=-39
+wrote 0 bytes, buffer=0x7ffe1230c570, towrite=0
+wrote 1861650 bytes, buffer=0x7ffe124d2d82, towrite=-1861650
+PPM written

@@ -2,6 +2,7 @@ CXX=g++
 PRODUCT= test_benchmarks
 
 all: options.o bright invert sharpen
+	chmod 755 pipeline_script
 	
 options.o:
 	g++ -c -lpthread options.cpp ppm.cpp -I./
@@ -13,7 +14,7 @@ invert: invert.o
 	g++ $@.c -o $@ options.o ppm.o
 	
 sharpen: sharpen.o
-	g++ $@.c sharpen.c -o $@ options.o ppm.o
+	g++ $@.c -o $@ options.o ppm.o
 	
 sobel: sobel.o
 	g++ $@.c -o $@ options.o ppm.o
@@ -22,4 +23,5 @@ sobel: sobel.o
 	${CXX} -c $< -o $@
 	
 clean:
-	rm -f *.o *~ *.ppm
+	rm -f *.o *~ 
+	rm -f brighter.ppm inverted.ppm sharper.ppm brighter_inverted.ppm

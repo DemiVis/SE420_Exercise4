@@ -1,0 +1,12 @@
+if [ $# = 1 ]
+then
+	echo Inverting and brightening file: $1
+
+	./invert $1 >> pipeline.log
+	./bright inverted.ppm >> pipeline.log
+	cp brighter.ppm brighter_inverted.ppm >> pipeline.log
+	echo Output: brighter_inverted.ppm
+else
+	echo use: ./pipeline_script input_filename
+fi
+
